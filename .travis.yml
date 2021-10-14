@@ -1,0 +1,23 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '12'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: cf9710b1-01cf-44ef-b6ca-ce539958a2f1
+  app: platzi-store-angeling
+  on:
+    repo: angeling11/platzi-store-backend
