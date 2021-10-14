@@ -1,0 +1,24 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+node_js:
+  - '12'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key:
+    secure: "kO+pyXdnQ8VRBiRFJwSPiwDEIpHVoS8LN/eN+VtZzkLQ3p4oH2NeegUCvcAq6jmZmls9qWrCxAXvZkXsKacMmkYauaXC4uNeXSodBU/VFKMKrxcp0hcVLjEUwvJ7FBwV+beN14IXWn0UOxfsHBevtXuct0IM+Ldlc+lmPQdhiYIlC9HmbAX1hQx8uCZq7i9cH9PSPA1jExhmzz+AWBKv0gyarB9u5aAG3YmOxJKkl7Br7hzODVxRFd4sEYepOV0Xx6+J9fc/xd5/0J938QuNbzdwd/YiIkZXvSuwd5nbx3GEhQlZSPgtTwMZQx7Gh10XSza63aahTYJyzSxBi2/SA1ffKDkb2KHA6hmvD0Ev+PmAa+OI0ncb87SBeJv8bTH0qzspyaXQTutjrrsmtt6zuQsswrVCxdrLZcxkTXCpKukzQuhY00g/JacQC0nROgHGyLv+8f3EX8notKHnEuhd0rowCrCLckaKo4sIdJZWfZnGURtR1WbamBAwwz3nxMRjexl/eXWzt8Iyh55bTpOZoAI5bIgMfHG7U4ScaFpz4AIHgSxkfJfyNw6D7Z4qgiyeG73zVlqgLSiqwHVCVZSDle+kKS5/ppX5kBDUnzuRDigrTD+YXT8dn43DjbIEpuGjin5xFx3Fs18Z1px6paGlq5BJ1XQV2XydNtC9R7alD48="
+  app: platzi-store-angeling
+  on:
+    repo: angeling11/platzi-store-backend
